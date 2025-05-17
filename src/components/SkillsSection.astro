@@ -1,0 +1,24 @@
+---
+import SectionLayout from "../layouts/SectionLayout.astro";
+import SkillCard from "../components/SkillCard.astro";
+
+const sectionTitle = "Навыки";
+const skills = [
+    { name: "JavaScript", icon: "logo/javascript" },
+    { name: "Tailwind", icon: "logo/tailwind" },
+    { name: "TypeScript", icon: "logo/typescript" },
+    { name: "Vue", icon: "logo/vue" },
+    { name: "Nuxt", icon: "logo/nuxt" },
+    { name: "HTML", icon: "logo/html" },
+    { name: "CSS", icon: "logo/css" },
+    { name: "SASS", icon: "logo/sass" },
+    { name: "Git", icon: "logo/git" },
+    { name: "Figma", icon: "logo/figma" },
+];
+---
+
+<SectionLayout title={sectionTitle}>
+    <ul class="flex flex-wrap gap-x-14 gap-y-4">
+        {skills.map(({ name, icon }) => <SkillCard name={name} icon={icon} />)}
+    </ul>
+</SectionLayout>

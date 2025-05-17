@@ -1,8 +1,17 @@
 ---
+import "../styles/global.css";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import AvatarImg from "../assets/me_avatar.jpg";
+import SectionLayout from "../layouts/SectionLayout.astro";
+import SkillsSection from "../components/SkillsSection.astro";
+import EducationSection from "../components/EducationSection.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
 
+const title = "Портфолио";
 ---
 
-<html lang="en">
+<html lang="ru" class="font-title">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -10,7 +19,73 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="max-w-[1000px] m-auto">
+		<header></header>
+		<main class="py-12 px-8">
+			<h1 class="sr-only">{title}</h1>
+
+			<div class="flex flex-col gap-y-12 md:flex-row md:gap-x-4">
+				<div class="relative md:basis-4/10">
+					<div class="sticky top-5">
+						<figure class="relative w-fit">
+							<Image
+								class="w-[128px] aspect-square rounded-lg"
+								src={AvatarImg}
+								alt="Мое фоток"
+							/>
+						</figure>
+						<div class="flex flex-col gap-y-2">
+							<div>
+								<p>Артем Малафеев</p>
+								<p>Frontend-разработчик</p>
+							</div>
+							<div class="flex items-center gap-x-2 text-sm">
+								<Icon name="world" />
+								<p>Ставрополь, Россия</p>
+							</div>
+							<ul class="flex items-center gap-x-2">
+								<li>
+									<a href="#" target="_blank" rel="noopener"
+										><Icon name="socials/mail" />
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" rel="noopener"
+										><Icon name="socials/whatsapp" />
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" rel="noopener"
+										><Icon name="socials/telegram" />
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" rel="noopener"
+										><Icon name="socials/github" />
+									</a>
+								</li>
+							</ul>
+
+							<SectionLayout title="Обо мне">
+								<p class="max-w-[200px]">
+									Junior Full Stack Developer with a passion
+									for building web applications. Currently
+									seeking opportunities to further develop my
+									skills in a professional setting.
+								</p>
+							</SectionLayout>
+						</div>
+					</div>
+				</div>
+
+				<div class="flex flex-col gap-y-6 md:basis-6/10">
+					<SectionLayout title="Опыт работы" />
+					<ProjectsSection />
+					<SkillsSection />
+					<EducationSection />
+				</div>
+			</div>
+		</main>
+		<footer></footer>
 	</body>
 </html>

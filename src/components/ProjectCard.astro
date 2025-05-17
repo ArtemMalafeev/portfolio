@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="flex flex-col gap-y-2 p-4 border rounded-md">
+    <header class="flex justify-between items-center">
+        <a
+            class="flex gap-x-2 items-center"
+            href="#"
+            target="_blank"
+            rel="noopener"
+        >
+            <Icon name="outlink" />
+            <h3 class="font-medium">Портфолио</h3>
+        </a>
+        <Icon name="logo/git" />
+    </header>
+    <p class="text-sm">
+        Персональный сайт-портфолио для демонстрации моих проектов и навыков.
+    </p>
+    <ul class="flex flex-col gap-y-1 list-disc list-inside text-sm">
+        <li>Разработан на Astro и Tailwind</li>
+        <li>Минималистичный и адаптивный дизайн</li>
+    </ul>
+</div>

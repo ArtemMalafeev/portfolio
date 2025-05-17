@@ -1,0 +1,44 @@
+---
+import SectionLayout from "../layouts/SectionLayout.astro";
+import EducationCard from "./EducationCard.astro";
+
+const sectionTitle = "Образование";
+
+const education = [
+    {
+        title: "МИРЭА - Российский технологический университет",
+        description: "Программная инжерения",
+        date: "2018 - 2022",
+    },
+];
+
+const courses = [
+    {
+        title: "Профессиональная разработка на Vue.js",
+        description: "JavaScript.ru",
+        date: "2022",
+    },
+    {
+        title: "Современная верстка HTML/CSS",
+        description: "JavaScript.ru",
+        date: "2023",
+    },
+    {
+        title: "JavaScript/DOM/Интерфейсы для программистов",
+        description: "JavaScript.ru",
+        date: "2023",
+    },
+];
+---
+
+<SectionLayout title={sectionTitle}>
+    <ul class="flex flex-col gap-y-6">
+        {education.map((item) => <EducationCard item={item} />)}
+    </ul>
+
+    <h3>Сертификаты</h3>
+
+    <ul class="flex flex-col gap-y-6">
+        {courses.map((item) => <EducationCard item={item} />)}
+    </ul>
+</SectionLayout>
