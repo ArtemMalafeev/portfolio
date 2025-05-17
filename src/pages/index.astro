@@ -11,7 +11,7 @@ import ProjectsSection from "../components/ProjectsSection.astro";
 const title = "Портфолио";
 ---
 
-<html lang="ru" class="font-title">
+<html lang="ru" class="text-neutral-500 bg-neutral-100">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -26,7 +26,7 @@ const title = "Портфолио";
 
 			<div class="flex flex-col gap-y-12 md:flex-row md:gap-x-4">
 				<div class="relative md:basis-4/10">
-					<div class="sticky top-5">
+					<div class="flex flex-col gap-y-6 sticky top-5">
 						<figure class="relative w-fit">
 							<Image
 								class="w-[128px] aspect-square rounded-lg"
@@ -34,40 +34,76 @@ const title = "Портфолио";
 								alt="Мое фоток"
 							/>
 						</figure>
-						<div class="flex flex-col gap-y-2">
-							<div>
-								<p>Артем Малафеев</p>
-								<p>Frontend-разработчик</p>
+						<div class="flex flex-col gap-y-8">
+							<div class="flex flex-col gap-y-4">
+								<div class="flex flex-col gap-y-2">
+									<div>
+										<p
+											class="text-3xl font-medium text-secondary"
+										>
+											Артем Малафеев
+										</p>
+										<p class="text-sm">
+											Frontend-разработчик
+										</p>
+									</div>
+									<div
+										class="flex items-center gap-x-2 text-xs"
+									>
+										<Icon name="world" />
+										<p>Ставрополь, Россия</p>
+									</div>
+								</div>
+								<ul class="flex items-center gap-x-2">
+									<li
+										class="p-1 hover:bg-decorate hover:rounded-md"
+									>
+										<a
+											class="text-decorate"
+											href="#"
+											target="_blank"
+											rel="noopener"
+											><Icon name="socials/mail" />
+										</a>
+									</li>
+									<li
+										class="p-1 hover:bg-decorate hover:rounded-md"
+									>
+										<a
+											class="text-decorate"
+											href="#"
+											target="_blank"
+											rel="noopener"
+											><Icon name="socials/whatsapp" />
+										</a>
+									</li>
+									<li
+										class="p-1 hover:bg-decorate hover:rounded-md"
+									>
+										<a
+											class="text-decorate"
+											href="#"
+											target="_blank"
+											rel="noopener"
+											><Icon name="socials/telegram" />
+										</a>
+									</li>
+									<li
+										class="p-1 hover:bg-decorate hover:rounded-md"
+									>
+										<a
+											class="text-decorate"
+											href="#"
+											target="_blank"
+											rel="noopener"
+											><Icon name="socials/github" />
+										</a>
+									</li>
+								</ul>
 							</div>
-							<div class="flex items-center gap-x-2 text-sm">
-								<Icon name="world" />
-								<p>Ставрополь, Россия</p>
-							</div>
-							<ul class="flex items-center gap-x-2">
-								<li>
-									<a href="#" target="_blank" rel="noopener"
-										><Icon name="socials/mail" />
-									</a>
-								</li>
-								<li>
-									<a href="#" target="_blank" rel="noopener"
-										><Icon name="socials/whatsapp" />
-									</a>
-								</li>
-								<li>
-									<a href="#" target="_blank" rel="noopener"
-										><Icon name="socials/telegram" />
-									</a>
-								</li>
-								<li>
-									<a href="#" target="_blank" rel="noopener"
-										><Icon name="socials/github" />
-									</a>
-								</li>
-							</ul>
 
 							<SectionLayout title="Обо мне">
-								<p class="max-w-[200px]">
+								<p class="text-xs max-w-[200px]">
 									Junior Full Stack Developer with a passion
 									for building web applications. Currently
 									seeking opportunities to further develop my
@@ -79,7 +115,6 @@ const title = "Портфолио";
 				</div>
 
 				<div class="flex flex-col gap-y-6 md:basis-6/10">
-					<SectionLayout title="Опыт работы" />
 					<ProjectsSection />
 					<SkillsSection />
 					<EducationSection />

@@ -7,6 +7,7 @@ const sectionTitle = "Образование";
 const education = [
     {
         title: "МИРЭА - Российский технологический университет",
+        icon: "university",
         description: "Программная инжерения",
         date: "2018 - 2022",
     },
@@ -15,16 +16,19 @@ const education = [
 const courses = [
     {
         title: "Профессиональная разработка на Vue.js",
+        icon: "certificate",
         description: "JavaScript.ru",
         date: "2022",
     },
     {
         title: "Современная верстка HTML/CSS",
+        icon: "certificate",
         description: "JavaScript.ru",
         date: "2023",
     },
     {
         title: "JavaScript/DOM/Интерфейсы для программистов",
+        icon: "certificate",
         description: "JavaScript.ru",
         date: "2023",
     },
@@ -36,7 +40,11 @@ const courses = [
         {education.map((item) => <EducationCard item={item} />)}
     </ul>
 
-    <h3>Сертификаты</h3>
+    <h3
+        class="text-secondary underline underline-offset-4 decoration-dotted decoration-1 decoration-decorate decoration-2"
+    >
+        Сертификаты
+    </h3>
 
     <ul class="flex flex-col gap-y-6">
         {courses.map((item) => <EducationCard item={item} />)}

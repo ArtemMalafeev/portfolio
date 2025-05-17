@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
-h2 {
-  font-weight: 600;
-  font-size: 24px;
+:root {
+  --secondary: #000000;
+  --decorate: #008080;
+}
+
+@theme {
+  --color-decorate: var(--decorate);
+  --color-secondary: var(--secondary);
 }
