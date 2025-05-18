@@ -2,7 +2,13 @@
 
 :root {
   --secondary: #000000;
-  --decorate: #008080;
+  --decorate: #00b3b3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --secondary: #ffffff;
+  }
 }
 
 @theme {

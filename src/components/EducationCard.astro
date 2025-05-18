@@ -4,21 +4,21 @@ import { Icon } from "astro-icon/components";
 const { item } = Astro.props;
 ---
 
-<li class="flex flex-col gap-y-2 text-sm md:flex-row md:justify-between">
+<li class="flex flex-col gap-y-2 md:flex-row md:justify-between">
     <div class="flex gap-x-3">
         <Icon
-            class="text-base text-secondary hidden md:block md:mt-[2px] md:shrink-0"
+            class="text-xl text-secondary hidden md:block md:mt-[3px] md:shrink-0"
             name={item.icon}
         />
         <div>
             <a
-                class="font-medium text-secondary text-sm hover:text-decorate hover:underline decoration-dotted underline-offset-4 decoration-2"
+                class="font-medium text-secondary hover:text-decorate hover:underline decoration-dotted underline-offset-4 decoration-2"
                 href="#"
                 target="_blank"
                 rel="noopener">{item.title}</a
             >
-            <p class="text-xs">{item.description}</p>
+            <p class="text-sm">{item.description}</p>
         </div>
     </div>
-    <time class="shrink-0 text-wrap text-xs md:mt-[2px]">{item.date}</time>
+    <time class="shrink-0 text-wrap text-xs md:mt-[5px]">{item.date}</time>
 </li>

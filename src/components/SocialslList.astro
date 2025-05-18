@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socials = [
+    { icon: "socials/mail" },
+    { icon: "socials/whatsapp" },
+    { icon: "socials/telegram" },
+    { icon: "socials/github" },
+];
+---
+
+<div class="flex items-center gap-x-3">
+    {
+        socials.map((social) => (
+            <a
+                class="p-1 text-decorate hover:bg-decorate hover:text-white hover:rounded-md"
+                href="#"
+                target="_blank"
+                rel="noopener"
+            >
+                <Icon class="text-xl" name={social.icon} />
+            </a>
+        ))
+    }
+</div>

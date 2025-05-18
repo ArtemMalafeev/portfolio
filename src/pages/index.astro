@@ -7,11 +7,12 @@ import SectionLayout from "../layouts/SectionLayout.astro";
 import SkillsSection from "../components/SkillsSection.astro";
 import EducationSection from "../components/EducationSection.astro";
 import ProjectsSection from "../components/ProjectsSection.astro";
+import SocialslList from "../components/SocialslList.astro";
 
 const title = "Портфолио";
 ---
 
-<html lang="ru" class="text-neutral-500 bg-neutral-100">
+<html lang="ru" class="text-neutral-400 bg-neutral-100 dark:bg-black/92">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -19,20 +20,44 @@ const title = "Портфолио";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="max-w-[1000px] m-auto">
+	<body class="max-w-[1210px] m-auto">
 		<header></header>
 		<main class="py-12 px-8">
 			<h1 class="sr-only">{title}</h1>
 
-			<div class="flex flex-col gap-y-12 md:flex-row md:gap-x-4">
-				<div class="relative md:basis-4/10">
-					<div class="flex flex-col gap-y-6 sticky top-5">
-						<figure class="relative w-fit">
+			<div class="flex flex-col gap-y-12 md:flex-row md:gap-x-12">
+				<div class="relative md:basis-3/10">
+					<div class="flex flex-col gap-y-10 sticky top-15">
+						<figure
+							class="relative w-fit shadow-lg shadow-decorate/10"
+						>
 							<Image
 								class="w-[128px] aspect-square rounded-lg"
 								src={AvatarImg}
 								alt="Мое фоток"
 							/>
+							<div class="absolute inset-[-30px]">
+								<div
+									class="absolute left-[20px] h-full w-px bg-decorate"
+									style="mask-image: linear-gradient(to top, transparent, white 4rem, white calc(100% - 4rem), transparent)"
+								>
+								</div>
+								<div
+									class="absolute right-[20px] h-full w-px bg-decorate"
+									style="mask-image: linear-gradient(to top, transparent, white 4rem, white calc(100% - 4rem), transparent)"
+								>
+								</div>
+								<div
+									class="absolute top-[20px] h-px w-full bg-decorate"
+									style="mask-image: linear-gradient(to left, transparent, white 4rem, white calc(100% - 4rem), transparent)"
+								>
+								</div>
+								<div
+									class="absolute bottom-[20px] h-px w-full bg-decorate"
+									style="mask-image: linear-gradient(to left, transparent, white 4rem, white calc(100% - 4rem), transparent)"
+								>
+								</div>
+							</div>
 						</figure>
 						<div class="flex flex-col gap-y-8">
 							<div class="flex flex-col gap-y-4">
@@ -43,67 +68,20 @@ const title = "Портфолио";
 										>
 											Артем Малафеев
 										</p>
-										<p class="text-sm">
-											Frontend-разработчик
-										</p>
+										<p>Frontend-разработчик</p>
 									</div>
 									<div
-										class="flex items-center gap-x-2 text-xs"
+										class="flex items-center gap-x-2 text-sm"
 									>
 										<Icon name="world" />
 										<p>Ставрополь, Россия</p>
 									</div>
 								</div>
-								<ul class="flex items-center gap-x-2">
-									<li
-										class="p-1 hover:bg-decorate hover:rounded-md"
-									>
-										<a
-											class="text-decorate"
-											href="#"
-											target="_blank"
-											rel="noopener"
-											><Icon name="socials/mail" />
-										</a>
-									</li>
-									<li
-										class="p-1 hover:bg-decorate hover:rounded-md"
-									>
-										<a
-											class="text-decorate"
-											href="#"
-											target="_blank"
-											rel="noopener"
-											><Icon name="socials/whatsapp" />
-										</a>
-									</li>
-									<li
-										class="p-1 hover:bg-decorate hover:rounded-md"
-									>
-										<a
-											class="text-decorate"
-											href="#"
-											target="_blank"
-											rel="noopener"
-											><Icon name="socials/telegram" />
-										</a>
-									</li>
-									<li
-										class="p-1 hover:bg-decorate hover:rounded-md"
-									>
-										<a
-											class="text-decorate"
-											href="#"
-											target="_blank"
-											rel="noopener"
-											><Icon name="socials/github" />
-										</a>
-									</li>
-								</ul>
+								<SocialslList />
 							</div>
 
 							<SectionLayout title="Обо мне">
-								<p class="text-xs max-w-[200px]">
+								<p class="text-sm">
 									Junior Full Stack Developer with a passion
 									for building web applications. Currently
 									seeking opportunities to further develop my
@@ -114,7 +92,7 @@ const title = "Портфолио";
 					</div>
 				</div>
 
-				<div class="flex flex-col gap-y-6 md:basis-6/10">
+				<div class="flex flex-col gap-y-6 md:basis-7/10">
 					<ProjectsSection />
 					<SkillsSection />
 					<EducationSection />
